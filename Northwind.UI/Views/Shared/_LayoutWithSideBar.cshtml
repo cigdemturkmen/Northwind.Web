@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "_LayoutWithSidebar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles{
+    <link href="~/Content/css/sidebars.css" rel="stylesheet" />
+}
+
+<div class="row">
+    <div class="col-3">
+        @*@Html.Partial("_SidebarPartialView")*@
+        @Html.Action("_SidebarPartialView", "Category")
+    </div>
+    <div class="col-9">
+        @RenderBody()
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Content/js/sidebars.js"></script>
+}
